@@ -1,0 +1,54 @@
+{
+  // Use IntelliSense to learn about possible Node.js debug attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+  "version": "0.2.0",
+  "configurations": [{
+      "name": "LaunchChrome",
+      "type": "chrome",
+      "request": "launch",
+      "url": "http://localhost:4200",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}",
+      "userDataDir": "${workspaceRoot}/.vscode/chrome"
+    },
+    {
+      // For this to work, start chrome using
+      // google-chrome --remote-debugging-port=9222 http://localhost:4200
+      // and do not use its developer tools simultaneously.
+      "name": "Attach to Chrome, with sourcemaps",
+      "type": "chrome",
+      "request": "attach",
+      "port": 9222,
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}",
+
+      "sourceMapPathOverrides": {
+        "webpack:///*": "/*"
+      }
+    },
+    {
+      "type": "chrome",
+      "request": "launch",
+      "name": "Launch Chrome",
+      "url": "http://localhost:4200",
+      "sourceMaps": true,
+      "webRoot": "${workspaceRoot}"
+    },
+    {
+      "type": "node",
+      "request": "launch",
+      "name": "Launch Program",
+      "program": "${workspaceRoot}\\serve",
+      "outFiles": []
+    },
+    {
+      "type": "node",
+      "request": "attach",
+      "name": "Attach to Port",
+      "address": "localhost",
+      "port": 5858,
+      "outFiles": []
+    }
+  ]
+}
