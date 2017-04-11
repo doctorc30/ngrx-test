@@ -7,11 +7,13 @@ export interface State {
 };
 
 const initialState = {
-    select: Item,
+    select: {
+        name: ''
+    },
     items: []
 };
 
-export function reducer(state = initialState, action: items.Actions): State {
+export const  itemsReducer = (state : State = initialState, action: items.Actions): State => {
     switch (action.type) {
         case items.ActionTypes.ADD: {
             return Object.assign({}, state, {
@@ -19,14 +21,8 @@ export function reducer(state = initialState, action: items.Actions): State {
             });
         }
         case items.ActionTypes.REMOVE: {
-            const item = action.payload;
-
-            if (state.items.indexOf(item) > -1) {
-                return state;
-            }
-
             return Object.assign({}, state, {
-                items: [...state.items, action.payload]
+                items: state.items.filter((item)=>item != action.payload)
             });
         }
         case items.ActionTypes.SELECT: {
