@@ -5,8 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from "@ngrx/store";
-import * as fromItems from './reducers/items.reducer'
-import * as fromLayout from './reducers/layout.reducer'
+// import * as items from './reducers/items.reducer'
+// import * as layout from './reducers/layout.reducer'
+ import * as fromRoot from './reducers'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ListComponent } from "app/list.component";
 
@@ -19,8 +20,7 @@ import { ListComponent } from "app/list.component";
     BrowserModule,
     FormsModule,
     HttpModule,
-    StoreModule.provideStore(fromItems.itemsReducer),
-    StoreModule.provideStore(fromLayout.layoutReducer),
+    StoreModule.provideStore(fromRoot.reducers),
     StoreDevtoolsModule.instrumentOnlyWithExtension(),
   ],
   providers: [],
