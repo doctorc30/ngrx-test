@@ -38,7 +38,7 @@ export class AppComponent {
   constructor(private storeItems: Store<State>, private storeLayout: Store<LayoutState> ) {
     this.items$ = storeItems.select(fromRoot.getItems);
     this.selectItem$ = storeItems.select(fromRoot.getSelect);
-    this.layout$ = storeLayout.select(fromRoot.getLayout);
+    this.layout$ = storeLayout.select(fromRoot.getLayoutState);
   }
 
   add(input: any) {

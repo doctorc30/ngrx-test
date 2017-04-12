@@ -35,3 +35,6 @@ export const  itemsReducer = (state : State = initialState, action: items.Action
         }
     }
 }
+
+export const getItems = (state: State) => state.items;
+export const getSelect = (state: State) => state.select;

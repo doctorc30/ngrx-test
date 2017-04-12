@@ -5,9 +5,9 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { StoreModule } from "@ngrx/store";
-// import * as items from './reducers/items.reducer'
-// import * as layout from './reducers/layout.reducer'
- import * as fromRoot from './reducers'
+import * as items from './reducers/items.reducer'
+import * as layout from './reducers/layout.reducer'
+import * as fromRoot from './reducers'
 import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 import { ListComponent } from "app/list.component";
 
