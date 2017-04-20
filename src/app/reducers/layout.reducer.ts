@@ -14,7 +14,7 @@ const initialState : LayoutState = {
     showReg2: false
 };
 
-export const  layoutReducer = (state : LayoutState = initialState, action: layout.Actions): LayoutState => {
+export function  layoutReducer (state : LayoutState = initialState, action: layout.Actions): LayoutState {
     switch (action.type) {
         case layout.ActionTypes.SHOW_AUTH: {
             return Object.assign({}, initialState, {

@@ -13,7 +13,7 @@ const initialState = {
     items: []
 };
 
-export const  itemsReducer = (state : State = initialState, action: items.Actions): State => {
+export function itemsReducer (state : State = initialState, action: items.Actions): State {
     switch (action.type) {
         case items.ActionTypes.ADD: {
             return Object.assign({}, state, {
